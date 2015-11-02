@@ -1,0 +1,12 @@
+<div class="wrap">
+    <img ng-src="{{ article.media[0]['media-metadata'][0].url }}" />
+    <span>{{ article.title }}</span>
+    <div>
+        <button ng-click="back()">Back</button>
+        <span>
+            {{ article.abstract }}
+            <span class='type'>{{article.type}}</span>
+            <a href={{article.url}}>link</a>
+        </span>
+    </div>
+</div>

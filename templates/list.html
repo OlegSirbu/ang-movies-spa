@@ -1,0 +1,6 @@
+ <div ng-repeat="article in movies">
+	<div class="wrap" ng-click="showDetail(article, $item)">
+	    <img ng-src="{{ article.media[0]['media-metadata'][0].url }}" />
+	    <span>{{ article.title }}</span>
+	</div>
+</div> 
