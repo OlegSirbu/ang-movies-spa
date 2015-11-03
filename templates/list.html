@@ -1,6 +1,14 @@
- <div ng-repeat="article in movies">
-	<div class="wrap" ng-click="showDetail(article, $item)">
-	    <img ng-src="{{ article.media[0]['media-metadata'][0].url }}" />
-	    <span>{{ article.title }}</span>
+<div class="row" ng-if='movies'>
+	<div class="col-md-3">
+		<input type="text" ng-model='search'>
 	</div>
-</div> 
+
+	<div class="col-md-9">
+		<div ng-repeat="article in movies" >
+			<div class="wrap" ng-click="showDetail(article, $item)">
+			    <img ng-src="{{ article.media[0]['media-metadata'][0].url }}" />
+			    <span>{{ article.title }}</span>
+			</div>
+		</div> 	
+	</div>
+</div>

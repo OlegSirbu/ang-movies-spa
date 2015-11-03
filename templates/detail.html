@@ -1,12 +1,31 @@
-<div class="wrap">
-    <img ng-src="{{ article.media[0]['media-metadata'][0].url }}" />
-    <span>{{ article.title }}</span>
-    <div>
-        <button ng-click="back()">Back</button>
-        <span>
+<div class="wrap" ng-if='article'>
+    <h3>{{ article.title }}</h3>
+
+    <div class='contant row'>
+        <img class="col-md-4" ng-src="{{ article.media[0]['media-metadata'][2].url }}" />
+        <div class="col-md-6">
             {{ article.abstract }}
-            <span class='type'>{{article.type}}</span>
-            <a href={{article.url}}>link</a>
-        </span>
+            <a ng-href={{article.url}}>go to original article</a>
+        </div>
     </div>
+    
+    <div class='detail'>
+        <table class='table table-striped'>
+            <thead>
+                <tr>
+                    <th>type</th>
+                    <th>source</th>
+                    <th>date</th>
+                    <th>section</th>
+                </tr>
+            </thead>
+
+            <td>{{article.type}}</td>
+            <td>{{article.source}}</td>
+            <td>{{article.published_date}}</td>
+            <td>{{article.section}}</td>
+        </table>
+    </div>
+
+    <button ng-click="back()" class="btn btn-primary">Back</button>
 </div>
